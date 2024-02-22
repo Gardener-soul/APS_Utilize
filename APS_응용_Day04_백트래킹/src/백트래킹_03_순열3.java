@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ¹éÆ®·¡Å·_03_¼ø¿­3 {
+public class ë°±íŠ¸ë˜í‚¹_03_ìˆœì—´3 {
 	
-	public static int[] nums; //¹è¿­ ÀúÀåÀ» ÇÒ°Å±¸
-	public static int N; 	  //¿ø¼Ò ¼ö
+	public static int[] nums; //ë°°ì—´ ì €ì¥ì„ í• ê±°êµ¬
+	public static int N; 	  //ì›ì†Œ ìˆ˜
 	public static int[] result;
 	public static boolean[] visited;
 	
@@ -19,7 +19,7 @@ public class ¹éÆ®·¡Å·_03_¼ø¿­3 {
 		
 	}
 	
-	//idx : ÇöÀç ÆÇ´Ü À§Ä¡
+	//idx : í˜„ì¬ íŒë‹¨ ìœ„ì¹˜
 	public static void perm(int idx) {
 		
 		if(idx == N) {
@@ -29,23 +29,15 @@ public class ¹éÆ®·¡Å·_03_¼ø¿­3 {
 			
 		}
 		
-		//»ç¿ëÇÒ ¼ö ÀÖ´Â ¸ğµç ¿ø¼Ò¸¦ Ã¼Å©
+		//ì‚¬ìš©í•  ìˆ˜ ìˆëŠ” ëª¨ë“  ì›ì†Œë¥¼ ì²´í¬
 		for(int i=0; i<N; i++) {
-			if(visited[i]) continue; //ÀÌ¹Ì »ç¿ëÇÑ ¿ø¼Ò¶ó¸é (True¶ó¸é ÃÄ³»±â)
+			if(visited[i]) continue; //ì´ë¯¸ ì‚¬ìš©í•œ ì›ì†Œë¼ë©´ (Trueë¼ë©´ ì³ë‚´ê¸°)
 			
-			result[idx] = nums[i]; //ÇØ´ç i¹øÂ°ÀÇ ¿ø¼Ò¸¦ ÀúÀå
-			visited[i] = true;		//i¹øÂ° ¿ø¼Ò »ç¿ëÇß´Ù°í Ç¥½Ã
+			result[idx] = nums[i]; //í•´ë‹¹ ië²ˆì§¸ì˜ ì›ì†Œë¥¼ ì €ì¥
+			visited[i] = true;		//ië²ˆì§¸ ì›ì†Œ ì‚¬ìš©í–ˆë‹¤ê³  í‘œì‹œ
 			perm(idx+1);
-			visited[i] = false;		//i¹øÂ° ¿ø»óº¹±¸
+			visited[i] = false;		//ië²ˆì§¸ ì›ìƒë³µêµ¬
 		}
 		
 	}
-	
-	//nums ¹è¿­À» staticÇÏ°Ô ¼±¾ğÇß±â ¶§¹®¿¡ ÀÎµ¦½º¸¸À» ÀÎÀÚ·Î ¹Ş¾Æ¼­ Ã³¸® °¡´É.
-	public static void swap(int a, int b) {
-		int tmp = nums[a];
-		nums[a] = nums[b];
-		nums[b] = tmp;
-	}
-	
 }
